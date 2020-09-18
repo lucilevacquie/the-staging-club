@@ -1,27 +1,29 @@
 import Styled from "styled-components";
+import ContactLink from "./imglink";
 
 const Container = Styled.div`
-position: fixed;
-overflow: hidden;
-background-color: black;
-text-align:center;
-`;
-
-const Text = Styled.div`
+font-family: 'Playfair Display', serif;
 color: white;
-font-family: "Times New Roman", Times, serif;
-font-size:1rem;
+font-size: 1rem;
+text-align: center;
+background-color: black;
+display:grid;
+grid-template-rows: 70% 30%;
+align-items: center;
+max-height: fit-content;
 `;
 
-const ContactLogo = Styled.div`
+const TextContainer = Styled.div``;
 
-`;
+const ContactLogo = Styled.div``;
 
 const Column1 = () => {
   return (
     <Container>
-      <Text>Column1</Text>
-      <ContactLogo></ContactLogo>
+      <TextContainer />
+      <ContactLogo>
+        <ContactLink />
+      </ContactLogo>
     </Container>
   );
 };

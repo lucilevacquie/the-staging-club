@@ -2,8 +2,6 @@ import Styled from "styled-components";
 
 const LogoImg = Styled.img`
 width: 50%;
-float : left;
-
 `;
 
 const Logo = () => {

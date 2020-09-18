@@ -1,4 +1,10 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+body,
+html {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+#__next {
+  height: 100%;
 }

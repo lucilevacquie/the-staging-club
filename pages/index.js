@@ -1,11 +1,9 @@
-import Navbar from "../components/navbar/navbar";
-import Main from "../components/main/main";
+import BigGrid from "../components/big grid/biggrid";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Main />
+      <BigGrid />
     </>
   );
 }
