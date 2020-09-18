@@ -1,10 +1,11 @@
-import Head from 'next/head'
-import Navbar from '../components/navbar/navbar'
+import Navbar from "../components/navbar/navbar";
+import Main from "../components/main/main";
 
 export default function Home() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
+      <Main />
     </>
-  )
+  );
 }
