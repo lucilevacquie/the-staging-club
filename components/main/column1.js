@@ -8,7 +8,7 @@ font-size: 1rem;
 text-align: center;
 background-color: black;
 display:grid;
-grid-template-rows: 70% 30%;
+grid-template-rows: 65% 35%;
 align-items: center;
 max-height: fit-content;
 `;

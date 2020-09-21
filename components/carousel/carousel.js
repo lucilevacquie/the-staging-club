@@ -1,5 +1,7 @@
 import Styled from "styled-components";
+import { useState } from "react";
 import ArrowContainer from "./arrows";
+import Dots from "./dots";
 
 const DataCarousel = [
   {
@@ -28,9 +30,9 @@ height:100vh;
 const SlideContainer = Styled.div`
 position:relative;
 overflow : hidden;
-/*arrows align vertical but image is not taking the whole screen anymore*/
 display: flex;
 align-items:center;
+width:100%;
 `;
 
 const Slide = Styled.div`
@@ -41,25 +43,49 @@ const Slide = Styled.div`
   text-align: center;
 `;
 
+const ImgSlide = Styled.div`
+width:100vw;
+`;
+
 const Img = Styled.img`
     width: 100%;
+    height:100%;
 `;
 
 const Label = Styled.div``;
 
 const Carousel = () => {
+  const [count, setCount] = useState(0);
+  const prev = () => {
+    let newCount = count - 1;
+    if (newCount < 0) {
+      newCount = DataCarousel.length - 1;
+    }
+    setCount(newCount);
+  };
+  const next = () => {
+    let newCount = count + 1;
+    if (newCount >= DataCarousel.length) {
+      newCount = 0;
+    }
+    setCount(newCount);
+  };
   return (
     <Container>
       <SlideContainer>
-        <ArrowContainer />
+        <ArrowContainer next={next} prev={prev} />
         <Slide>
-          {DataCarousel.map((item) => (
-            <>
-              <Img src={item.img} alt="" />
-              <Label>{item.label}</Label>
-            </>
-          ))}
+          {DataCarousel.map(
+            (item, index) =>
+              index === count && (
+                <ImgSlide key={index}>
+                  <Img src={item.img} alt="" />
+                  <Label>{item.label}</Label>
+                </ImgSlide>
+              )
+          )}
         </Slide>
+        <Dots currentIndex={count} dataCarousel={DataCarousel} />
       </SlideContainer>
     </Container>
   );

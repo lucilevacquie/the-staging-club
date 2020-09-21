@@ -11,7 +11,7 @@ display : grid;
 grid-template-columns : 110px 1fr;
 height:100%;
 width: 100%;
-background-color: blue;
+background-color:rgb(234, 233, 233);
 overflow:hidden;
 `;
 
