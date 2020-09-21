@@ -1,4 +1,5 @@
 import Styled from "styled-components";
+import ArrowContainer from "./arrows";
 
 const DataCarousel = [
   {
@@ -26,6 +27,10 @@ height:100vh;
 
 const SlideContainer = Styled.div`
 position:relative;
+overflow : hidden;
+/*arrows align vertical but image is not taking the whole screen anymore*/
+display: flex;
+align-items:center;
 `;
 
 const Slide = Styled.div`
@@ -46,6 +51,7 @@ const Carousel = () => {
   return (
     <Container>
       <SlideContainer>
+        <ArrowContainer />
         <Slide>
           {DataCarousel.map((item) => (
             <>
