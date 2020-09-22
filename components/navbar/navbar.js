@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Styled from "styled-components";
 import Logo from "./logo";
-import SharePopup from "../share-popup/popup";
+import ShareButton from "../share-popup/share-button";
 
 const NavContainer = Styled.div`
   font-family: 'Playfair Display', serif;
@@ -33,13 +33,6 @@ const LinkContainer = Styled.div`
     }
 `;
 
-const ShareButton = Styled.div`
-  color:white;
-  width: 70px;
-  padding: 1rem;
-  text-align: center;
-`;
-
 const Navbar = () => {
   return (
     <NavContainer>
@@ -55,10 +48,7 @@ const Navbar = () => {
         <Link href="/reviews">Reviews</Link>
         <Link href="/contact">Contact</Link>
       </LinkContainer>
-      <ShareButton>
-        <p>Share</p>
-        {/* <SharePopup /> */}
-      </ShareButton>
+      <ShareButton></ShareButton>
     </NavContainer>
   );
 };
