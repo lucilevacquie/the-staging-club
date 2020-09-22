@@ -13,10 +13,10 @@ const Contact = () => {
   return (
     <Container>
       <Titles>Contact us</Titles>
-      <Paragraph>
+      <p>
         For a no obligation chat about your plans just get in touch by using any
         of the methods below!
-      </Paragraph>
+      </p>
       <ContactLink />
     </Container>
   );

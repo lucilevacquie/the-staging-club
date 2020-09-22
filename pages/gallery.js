@@ -6,12 +6,13 @@ const Container = Styled.div`
 margin-top: 2rem;
 font-family: 'Playfair Display', serif;
 padding : 1rem 4rem;
+text-align: center;
 `;
 
 const Gallery = () => {
   return (
     <Container>
-      <Title>Before vs After</Title>
+      <Title>Gallery</Title>
       <Carousel></Carousel>
     </Container>
   );

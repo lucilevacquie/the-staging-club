@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Styled from "styled-components";
 import Logo from "./logo";
+import SharePopup from "../share-popup/popup";
 
 const NavContainer = Styled.div`
   font-family: 'Playfair Display', serif;
@@ -55,8 +56,8 @@ const Navbar = () => {
         <Link href="/contact">Contact</Link>
       </LinkContainer>
       <ShareButton>
-        Share
-        {/* <img src="images/assets/share.png" alt="Share"></img> */}
+        <p>Share</p>
+        {/* <SharePopup /> */}
       </ShareButton>
     </NavContainer>
   );

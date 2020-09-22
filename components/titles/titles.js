@@ -4,6 +4,7 @@ const Container = Styled.div`
 font-family: 'Playfair Display', serif;
 font-size: 2rem;
 text-align:center;
+padding-bottom: 1rem;
 `;
 
 const Titles = (props) => {
