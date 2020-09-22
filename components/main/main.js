@@ -1,9 +1,10 @@
 import Styled from "styled-components";
 import Column1 from "./column1";
 import Carousel from "../carousel/carousel";
-import AboutUs from "../aboutus/aboutus";
-import Services from "../services/services";
-import Contact from "../contact/contact";
+import AboutUs from "../../pages/aboutus";
+import Services from "../../pages/services";
+import Contact from "../../pages/contact";
+import Gallery from "../../pages/gallery";
 
 const Container = Styled.div`
 font-family: 'Playfair Display', serif;
@@ -31,6 +32,7 @@ const Main = () => {
         <Carousel />
         <AboutUs />
         <Services />
+        <Gallery />
         <Contact />
       </Column2>
     </Container>

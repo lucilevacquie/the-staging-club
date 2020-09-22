@@ -8,7 +8,7 @@ const NavContainer = Styled.div`
   width: 100%;
   background-color: black;
   display:grid;
-  grid-template-columns: 110px 800px 500px 1vh;
+  grid-template-columns: 110px 800px 700px 1vh;
   align-items:center;
 `;
 
@@ -50,6 +50,7 @@ const Navbar = () => {
         <Link href="/">Home</Link>
         <Link href="/aboutus">About us</Link>
         <Link href="/services">Services</Link>
+        <Link href="/gallery">Gallery</Link>
         <Link href="/reviews">Reviews</Link>
         <Link href="/contact">Contact</Link>
       </LinkContainer>

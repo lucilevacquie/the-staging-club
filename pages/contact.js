@@ -1,10 +1,10 @@
 import Styled from "styled-components";
-import Titles from "../titles/titles";
-import Paragraph from "../paragraphs/paragraphs";
-import ContactLink from "../main/imglink";
+import Titles from "../components/titles/titles";
+import Paragraph from "../components/paragraphs/paragraph";
+import ContactLink from "../components/main/imglink";
 
 const Container = Styled.div`
-height:100vh;
+margin-top: 2rem;
 font-family: 'Playfair Display', serif;
 padding : 1rem 4rem;
 `;
