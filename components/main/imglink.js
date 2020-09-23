@@ -24,7 +24,8 @@ const DataImg = [
   },
   {
     img: "images/assets/facebook.png",
-    link: "",
+    link:
+      "https://www.facebook.com/thestagingclub/?view_public_for=104062911452638",
     label: "Facebook",
   },
   {

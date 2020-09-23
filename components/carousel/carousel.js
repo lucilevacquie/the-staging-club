@@ -52,8 +52,6 @@ const Img = Styled.img`
     height:100%;
 `;
 
-const Label = Styled.div``;
-
 const Carousel = () => {
   const [count, setCount] = useState(0);
   const prev = () => {
@@ -80,7 +78,6 @@ const Carousel = () => {
               index === count && (
                 <ImgSlide key={index}>
                   <Img src={item.img} alt="" />
-                  <Label>{item.label}</Label>
                 </ImgSlide>
               )
           )}

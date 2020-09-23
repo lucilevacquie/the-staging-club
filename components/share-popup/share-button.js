@@ -4,13 +4,19 @@ import { useState } from "react";
 const ButtonContainer = Styled.div`  
     color:white;
     width: 70px;
-    padding: 1rem;
+    /* padding: 1rem; */
     text-align: center;
+    font-family: 'Playfair Display', serif;
 `;
 
 const Button = Styled.button`
     text-decoration: none;
     color: white;
+    background-color: black;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    cursor: pointer;
 `;
 
 const ModalContainer = Styled.div`
@@ -30,7 +36,7 @@ const Modal = Styled.div`
     margin: 15% auto;
     padding: 20px;
     border: 1px solid black;
-    width: 50%;
+    width: 30%;
 `;
 
 const CloseButton = Styled.span`
@@ -62,18 +68,18 @@ const DataLinks = [
   },
   {
     link:
-      "https://www.linkedin.com/shareArticle?url=[post-url]&title=[post-title]",
+      "https://www.linkedin.com/shareArticle?url=[post-url]&title=The%20Staging%20Club",
     img: "images/assets/linkedin2.png",
     label: "LinkedIn",
   },
   {
     link:
-      "https://twitter.com/share?url=[post-url]&text=[post-title]&via=[via]&hashtags=[hashtags]",
+      "https://twitter.com/share?url=[post-url]&text=The%20Staging%20Club&via=[via]&hashtags=[hashtags]",
     img: "images/assets/twitter.png",
     label: "Twitter",
   },
   {
-    link: "https://api.whatsapp.com/send?text=[post-title] [post-url]",
+    link: "https://api.whatsapp.com/send?text=The%20Staging%20Club [post-url]",
     img: "images/assets/whatsapp.png",
     label: "Whatsapp",
   },
@@ -85,8 +91,8 @@ const ShareButton = () => {
   return (
     <ButtonContainer>
       <Button onClick={() => setShow(true)}>Share</Button>
-      <ModalContainer showModal={show}>
-        <Modal>
+      <ModalContainer showModal={show} onClick={() => setShow(false)}>
+        <Modal onClick={(e) => e.stopPropagation()}>
           <CloseButton onClick={() => setShow(false)}>&times;</CloseButton>
           <Text>Share it with the world!</Text>
           <Links>
