@@ -5,8 +5,12 @@ import Text from "../components/paragraphs/text";
 import Image from "../components/paragraphs/images";
 
 const Container = Styled.div`
-font-family: 'Playfair Display', serif;
-padding : 2rem 4rem;
+  font-family: 'Playfair Display', serif;
+  padding : 2rem 4rem;
+  @media (max-width: 576px){
+    padding: 0 1rem;
+    margin-top: 1rem;
+    }
 `;
 
 const AboutUs = () => {

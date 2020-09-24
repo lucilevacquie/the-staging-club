@@ -7,6 +7,10 @@ margin-top: 2rem;
 font-family: 'Playfair Display', serif;
 padding : 1rem 4rem;
 text-align: center;
+@media (max-width: 576px){
+    padding: 0 1rem;
+    margin-top: 2rem;
+    }
 `;
 
 const Gallery = () => {

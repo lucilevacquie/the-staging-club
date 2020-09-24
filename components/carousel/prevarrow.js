@@ -12,13 +12,16 @@ const Image = Styled.img`
   :hover{
     opacity: 1;
   }
-  @media (min-width: 992px){
+  @media (max-width: 1200px){
+    width: 70px;
+  }
+  @media (max-width: 992px){
     width: 55px;
   }
-  @media (min-width: 768px){
+  @media (max-width: 768px){
     width: 50px;
   }
-  @media (min-width: 576px){
+  @media (max-width: 576px){
     width: 30px;
   }
 `;

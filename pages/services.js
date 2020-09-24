@@ -5,9 +5,13 @@ import Text from "../components/paragraphs/text";
 import Image from "../components/paragraphs/images";
 
 const Container = Styled.div`
-margin-top: 2rem;
-font-family: 'Playfair Display', serif;
-padding : 1rem 4rem;
+  margin-top: 2rem;
+  font-family: 'Playfair Display', serif;
+  padding : 1rem 4rem;
+  @media (max-width: 768px){
+    padding: 0 2rem;
+    margin-top: 2rem;
+  }
 `;
 
 const Services = () => {

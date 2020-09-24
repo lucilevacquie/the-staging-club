@@ -15,6 +15,10 @@ const DataCarousel = [
     src: "images/assets/kitchen.png",
     label: "Kitchen before and after",
   },
+  {
+    src: "images/assets/bathroom.png",
+    label: "Bathroom before and after",
+  },
 ];
 
 const Container = Styled.div`
@@ -24,20 +28,36 @@ const Container = Styled.div`
     overflow: hidden;
     width: 100%;
     height: 700px;
+    @media (max-width: 992px){
+      height:480px;
+    }
+    @media (max-width: 768px){
+      height:400px;
+    }
+    @media (max-width: 576px){
+      height:350px;
+    }
+    @media (max-width: 450px){
+      height:250px;
+    }
 `;
 
 const SlideContainer = Styled.div`
     position:relative;
     overflow: hidden;
     display: flex;
-    align-items: center;
     max-width: 1200px;
     margin: auto;
+    @media (max-width: 992px){
+      height:90%;
+    }
 `;
 
 const Slide = Styled.div`
     margin:0;
     width: 100%;
+    display: flex;
+    align-items: center;
 `;
 
 const ImgSlide = Styled.div`
@@ -47,6 +67,9 @@ const ImgSlide = Styled.div`
 const Img = Styled.img`
     width: 100%;
     max-height:700px;
+    @media (max-width: 992px){
+      width:500px;
+    }
 `;
 
 const Label = Styled.div`
@@ -72,8 +95,8 @@ const Carousel = () => {
   return (
     <Container>
       <SlideContainer>
-        <ArrowContainer next={next} prev={prev} />
         <Slide>
+          <ArrowContainer next={next} prev={prev} />
           {DataCarousel.map(
             (item, index) =>
               index === count && (

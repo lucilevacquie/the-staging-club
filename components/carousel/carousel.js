@@ -19,12 +19,15 @@ const DataCarousel = [
 ];
 
 const Container = Styled.div`
-display : flex;
-flex-direction: column;
-justify-content: center;
-overflow: hidden;
-max-height:100%;
-height:100vh;
+  display : flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  max-height:100%;
+  height:100vh;
+  @media (max-width: 576px){
+    height:auto;
+  }
 `;
 
 const SlideContainer = Styled.div`

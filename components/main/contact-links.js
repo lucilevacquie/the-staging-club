@@ -12,7 +12,7 @@ const ImageContainer = Styled.div`
 const ImgLink = Styled.img`
   width: 25%;
   padding: 0.5rem 2rem;
-  @media (max-width: 576px){
+  @media (max-width: 768px){
     width: 18%;
     padding: 0.5rem;
     margin-bottom:2rem;

@@ -2,9 +2,11 @@ import Styled from "styled-components";
 import Navbar from "../navbar/navbar";
 import Main from "../main/main";
 
+export const NavHeight = "70px";
+
 const Container = Styled.div`
     display: grid;
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: ${NavHeight} 1fr;
     height: 100%;
     width: 100%;
 `;

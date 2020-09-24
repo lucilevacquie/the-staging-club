@@ -2,6 +2,8 @@ import Link from "next/link";
 import Styled from "styled-components";
 import Logo from "./logo";
 import ShareButton from "../share-popup/share-button";
+import MobileMenu from "./mobile-menu";
+import LaptopMenu from "./links-pages";
 
 const NavContainer = Styled.div`
   font-family: 'Playfair Display', serif;
@@ -9,8 +11,21 @@ const NavContainer = Styled.div`
   width: 100%;
   background-color: black;
   display:grid;
-  grid-template-columns: 110px 800px 700px 1vh;
   align-items:center;
+  grid-template-columns: 110px 900px 700px 1vh;
+  z-index:999;
+  @media (max-width: 1200px){
+    grid-template-columns: 110px 900px 700px 1vh;
+  }
+  @media (max-width: 992px){
+    grid-template-columns: 110px 300px 500px 1vh;
+  }
+  @media (max-width: 768px){
+    grid-template-columns: 110px 400px 1vh;
+  }
+  @media (max-width: 576px){
+    grid-template-columns: 90px 230px 1vh;
+  }
 `;
 
 const LogoContainer = Styled.div`
@@ -20,17 +35,12 @@ const LogoContainer = Styled.div`
 const Title = Styled.div`
   color: gold;
   font-size: 2rem;
-`;
-
-const LinkContainer = Styled.div`
-  color: white;
-  text-align: center;
-    a {
-      color:white;
-      text-decoration:none;
-      font-size: 1rem;
-      padding : 1rem;
-    }
+  @media (max-width: 768px){
+    font-size: 1.8rem;
+  }
+  @media (max-width: 576px){
+    font-size: 1.2rem;
+  }
 `;
 
 const Navbar = () => {
@@ -40,14 +50,8 @@ const Navbar = () => {
         <Logo />
       </LogoContainer>
       <Title>The Staging Club</Title>
-      <LinkContainer>
-        <Link href="/">Home</Link>
-        <Link href="/aboutus">About us</Link>
-        <Link href="/services">Services</Link>
-        <Link href="/gallery">Gallery</Link>
-        <Link href="/reviews">Reviews</Link>
-        <Link href="/contact">Contact</Link>
-      </LinkContainer>
+      <LaptopMenu />
+      <MobileMenu />
       <ShareButton></ShareButton>
     </NavContainer>
   );

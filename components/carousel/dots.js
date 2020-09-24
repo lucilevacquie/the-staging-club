@@ -14,15 +14,19 @@ const Dot = Styled.div`
   display: inline-block;
   margin: 0 10px;
   opacity: 0.7;
-  @media (min-width: 992px){
+  @media (max-width: 1200px){
+    height: 25px;
+    width: 25px;
+  }
+  @media (max-width: 992px){
     height: 20px;
     width: 20px;
   }
-  @media (min-width: 768px){
+  @media (max-width: 768px){
     height: 15px;
     width: 15px;
   }
-  @media (min-width: 576px){
+  @media (max-width: 576px){
     height: 5px;
     width: 5px;
   }

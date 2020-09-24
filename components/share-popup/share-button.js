@@ -4,9 +4,11 @@ import { useState } from "react";
 const ButtonContainer = Styled.div`  
     color:white;
     width: 70px;
-    /* padding: 1rem; */
     text-align: center;
     font-family: 'Playfair Display', serif;
+    @media (max-width: 576px){
+      display:none;
+    }
 `;
 
 const Button = Styled.button`
