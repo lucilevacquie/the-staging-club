@@ -16,8 +16,7 @@ const Container = Styled.div`
 const AboutUs = () => {
   return (
     <Container id="aboutus">
-      <Titles>Welcome! We are The Staging Club,</Titles>
-      <Titles>from Sheffield.</Titles>
+      <Titles>We are The Staging Club</Titles>
       <Paragraph>
         <Text>
           Hi my name is Jenny and I am the creator of <b>The Staging Club</b>. I

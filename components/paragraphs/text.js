@@ -1,25 +1,23 @@
 import Styled from "styled-components";
 
 const Container = Styled.div`
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5rem;
+  font-size: 1rem;
   justify-content: justify;
   flex:2;
   width: 90%;
   @media (max-width: 992px){
-    font-size: 1rem;
     flex: 1.8;
   }
-  @media (max-width: 768px){
-    font-size: 1rem;
-  }
   @media (max-width: 576px){
-    font-size: 1rem;
     width: 100%;
   }
 `;
 
-const Blabla = Styled.p``;
+const Blabla = Styled.p`
+  text-align: justify;
+`;
 
 const Text = (props) => {
   return (
