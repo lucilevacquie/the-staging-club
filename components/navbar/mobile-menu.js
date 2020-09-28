@@ -1,26 +1,28 @@
 import Styled from "styled-components";
 import { NavHeight } from "../big-grid/biggrid";
 import { useState } from "react";
+import Sharebutton from "../share-popup/share-button";
+import ShareButton from "../share-popup/share-button";
 
 const DataNavbar = [
   {
-    href: "/",
+    href: "#home",
     title: "Home",
   },
   {
-    href: "/aboutus",
+    href: "#aboutus",
     title: "About us",
   },
   {
-    href: "/services",
+    href: "#services",
     title: "Services",
   },
   {
-    href: "/gallery",
+    href: "#gallery",
     title: "Gallery",
   },
   {
-    href: "/contact",
+    href: "#contact",
     title: "Contact",
   },
 ];
@@ -84,6 +86,7 @@ const HamburgerMenu = () => {
         </Button>
       </FirstRow>
       <SecondRow showPanel={show}>
+        <ShareButton></ShareButton>
         {DataNavbar.map((item) => (
           <LinkContainer>
             <a href={item.href}>{item.title}</a>

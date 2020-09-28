@@ -13,7 +13,7 @@ padding : 1rem 4rem;
 
 const Contact = () => {
   return (
-    <Container>
+    <Container id="contact">
       <Titles>Contact us</Titles>
       <p>
         For a no obligation chat about your plans just get in touch by using any

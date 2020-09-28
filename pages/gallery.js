@@ -15,7 +15,7 @@ text-align: center;
 
 const Gallery = () => {
   return (
-    <Container>
+    <Container id="gallery">
       <Title>Gallery</Title>
       <Carousel></Carousel>
     </Container>

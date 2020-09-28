@@ -6,7 +6,7 @@ const ButtonContainer = Styled.div`
     width: 70px;
     text-align: center;
     font-family: 'Playfair Display', serif;
-    @media (max-width: 576px){
+    @media (max-width: 768px){
       display:none;
     }
 `;

@@ -12,13 +12,13 @@ const NavContainer = Styled.div`
   background-color: black;
   display:grid;
   align-items:center;
-  grid-template-columns: 110px 900px 700px 1vh;
+  grid-template-columns: 110px 700px 700px 1vh;
   z-index:999;
   @media (max-width: 1200px){
-    grid-template-columns: 110px 900px 700px 1vh;
+    grid-template-columns: 110px 250px 500px 1vh;
   }
   @media (max-width: 992px){
-    grid-template-columns: 110px 300px 500px 1vh;
+    grid-template-columns: 110px 250px 500px 1vh;
   }
   @media (max-width: 768px){
     grid-template-columns: 110px 400px 1vh;

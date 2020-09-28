@@ -29,7 +29,7 @@ const Container = Styled.div`
     width: 100%;
     height: 700px;
     @media (max-width: 992px){
-      height:480px;
+      height:450px;
     }
     @media (max-width: 768px){
       height:400px;
@@ -48,9 +48,6 @@ const SlideContainer = Styled.div`
     display: flex;
     max-width: 1200px;
     margin: auto;
-    @media (max-width: 992px){
-      height:90%;
-    }
 `;
 
 const Slide = Styled.div`
@@ -67,9 +64,6 @@ const ImgSlide = Styled.div`
 const Img = Styled.img`
     width: 100%;
     max-height:700px;
-    @media (max-width: 992px){
-      width:500px;
-    }
 `;
 
 const Label = Styled.div`

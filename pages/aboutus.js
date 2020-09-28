@@ -15,7 +15,7 @@ const Container = Styled.div`
 
 const AboutUs = () => {
   return (
-    <Container>
+    <Container id="aboutus">
       <Titles>Welcome! We are The Staging Club,</Titles>
       <Titles>from Sheffield.</Titles>
       <Paragraph>

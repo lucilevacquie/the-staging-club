@@ -72,7 +72,7 @@ const Carousel = () => {
     setCount(newCount);
   };
   return (
-    <Container>
+    <Container id="home">
       <SlideContainer>
         <ArrowContainer next={next} prev={prev} />
         <Slide>
