@@ -3,19 +3,20 @@ import Styled from "styled-components";
 const LinkContainer = Styled.div`
   color: white;
   text-align: center;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
+    text-align: left;
+  }
+  @media (max-width: 900px){
     display:none;
   }
-  @media (max-width: 576px){
-    display:none;
-  }  
     a {
       color:white;
       text-decoration:none;
-      font-size: 1rem;
-      padding : 1rem;
-      @media (max-width: 768px){
-        padding: 0.5rem;
+      font-size: 1.5rem;
+      padding : 1rem 1.5rem;
+      @media (max-width: 1200px){
+        font-size: 1rem;
+        padding: 1rem;
       }
     }
 `;

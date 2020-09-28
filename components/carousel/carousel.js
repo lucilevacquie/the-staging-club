@@ -24,7 +24,6 @@ const Container = Styled.div`
   justify-content: center;
   overflow: hidden;
   max-height:100%;
-  height:100vh;
   @media (max-width: 576px){
     height:auto;
   }
@@ -47,12 +46,13 @@ const Slide = Styled.div`
 `;
 
 const ImgSlide = Styled.div`
-width:100vw;
+  width:100vw;
+  display:${(props) => (props.active ? "block" : "none")};
 `;
 
 const Img = Styled.img`
-    width: 100%;
-    height:100%;
+  width: 100%;
+  height:100%;
 `;
 
 const Carousel = () => {
@@ -71,21 +71,23 @@ const Carousel = () => {
     }
     setCount(newCount);
   };
+
   return (
     <Container id="home">
       <SlideContainer>
         <ArrowContainer next={next} prev={prev} />
         <Slide>
-          {DataCarousel.map(
-            (item, index) =>
-              index === count && (
-                <ImgSlide key={index}>
-                  <Img src={item.img} alt="" />
-                </ImgSlide>
-              )
-          )}
+          {DataCarousel.map((item, index) => (
+            <ImgSlide key={index} active={index === count}>
+              <Img src={item.img} alt="" />
+            </ImgSlide>
+          ))}
         </Slide>
-        <Dots currentIndex={count} dataCarousel={DataCarousel} />
+        <Dots
+          currentIndex={count}
+          dataCarousel={DataCarousel}
+          onClickFunc={setCount}
+        />
       </SlideContainer>
     </Container>
   );

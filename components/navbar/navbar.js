@@ -12,16 +12,17 @@ const NavContainer = Styled.div`
   background-color: black;
   display:grid;
   align-items:center;
-  grid-template-columns: 110px 700px 700px 1vh;
-  z-index:999;
+  @media (min-width: 1200px){
+    grid-template-columns: 110px 250px 800px 150px;
+  }
   @media (max-width: 1200px){
-    grid-template-columns: 110px 250px 500px 1vh;
+    grid-template-columns: 110px 250px 500px 150px;
   }
   @media (max-width: 992px){
-    grid-template-columns: 110px 250px 500px 1vh;
+    grid-template-columns: 110px 250px 450px 150px;
   }
-  @media (max-width: 768px){
-    grid-template-columns: 110px 400px 1vh;
+  @media (max-width: 900px){
+    grid-template-columns: 110px 250px 1vh;
   }
   @media (max-width: 576px){
     grid-template-columns: 90px 230px 1vh;

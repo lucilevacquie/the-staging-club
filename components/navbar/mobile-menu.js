@@ -34,7 +34,8 @@ const Container = Styled.div`
     top: 0;
     left: 0;
     align-items: center;
-    @media (min-width: 768px){
+    z-index:1;
+    @media (min-width: 900px){
         display: none;
     }
 `;
@@ -64,6 +65,7 @@ const SecondRow = Styled.div`
     text-align: center;
     padding-right: 10px;
     width:100%;
+    z-index:1;
 `;
 
 const LinkContainer = Styled.div`

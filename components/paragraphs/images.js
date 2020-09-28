@@ -1,17 +1,14 @@
 import Styled from "styled-components";
 
 const Container = Styled.div`
-  flex:1;
+  flex:1.5;
   float: right;
   width: 90%;
   justify-content: center;
-  @media (max-width: 992px){
-    flex:1.5;
-  }
 `;
 
 const Img = Styled.img`
-  width: 50%;
+  width: 60%;
   @media (max-width: 992px){
     width: 65%;
   }

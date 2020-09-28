@@ -27,7 +27,9 @@ const Container = Styled.div`
     justify-content: center;
     overflow: hidden;
     width: 100%;
-    height: 700px;
+    @media (min-width: 1200px){
+      height: 500px;
+    }
     @media (max-width: 992px){
       height:450px;
     }
@@ -47,6 +49,7 @@ const SlideContainer = Styled.div`
     overflow: hidden;
     display: flex;
     max-width: 1200px;
+    height:510px;
     margin: auto;
 `;
 
@@ -58,17 +61,16 @@ const Slide = Styled.div`
 `;
 
 const ImgSlide = Styled.div`
-    width: 100%;
+    max-width: 755px;
+    display:${(props) => (props.active ? "block" : "none")};
 `;
 
 const Img = Styled.img`
     width: 100%;
-    max-height:700px;
+    max-height: 482px;
 `;
 
-const Label = Styled.div`
-padding-bottom: 1.5rem;
-`;
+const Label = Styled.div``;
 
 const Carousel = () => {
   const [count, setCount] = useState(0);
@@ -91,15 +93,12 @@ const Carousel = () => {
       <SlideContainer>
         <Slide>
           <ArrowContainer next={next} prev={prev} />
-          {DataCarousel.map(
-            (item, index) =>
-              index === count && (
-                <ImgSlide key={index}>
-                  <Img src={item.src} alt="" />
-                  <Label>{item.label}</Label>
-                </ImgSlide>
-              )
-          )}
+          {DataCarousel.map((item, index) => (
+            <ImgSlide key={index} active={index === count}>
+              <Img src={item.src} alt="" />
+              <Label>{item.label}</Label>
+            </ImgSlide>
+          ))}
         </Slide>
       </SlideContainer>
     </Container>
