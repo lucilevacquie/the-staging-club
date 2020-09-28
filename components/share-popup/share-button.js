@@ -7,7 +7,7 @@ const ButtonContainer = Styled.div`
     text-align: center;
     font-family: 'Playfair Display', serif;
     @media (max-width: 768px){
-      display:none;
+      display: none;
     }
 `;
 

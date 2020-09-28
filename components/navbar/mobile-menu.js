@@ -1,8 +1,7 @@
 import Styled from "styled-components";
 import { NavHeight } from "../big-grid/biggrid";
 import { useState } from "react";
-import Sharebutton from "../share-popup/share-button";
-import ShareButton from "../share-popup/share-button";
+import ShareHamburger from "../share-popup/share-hamburger";
 
 const DataNavbar = [
   {
@@ -37,23 +36,26 @@ const Container = Styled.div`
     align-items: center;
     @media (min-width: 768px){
         display: none;
+    }
 `;
 
 const FirstRow = Styled.div`
 `;
 
 const Button = Styled.button`
-    float: right;
-    background-color:black;
-    box-sizing: border-box;
-    border: none;
-    :hover{
-        border: solid gold;
-        border-radius: 10px;
-    }
-    img{
-        width: 40px;
-    }
+  float: right;
+  background-color:black;
+  box-sizing: border-box;
+  border: none;
+    :focus{
+    outline: none;
+  }
+`;
+
+const MenuIcon = Styled.img`
+  width: 40px;
+  height: 40px;
+
 `;
 
 const SecondRow = Styled.div`
@@ -82,11 +84,18 @@ const HamburgerMenu = () => {
     <Container>
       <FirstRow>
         <Button onClick={() => setShow(!show)}>
-          <img src="images/assets/menu-icon.png" />
+          <MenuIcon
+            showPanel={show}
+            src={
+              show
+                ? "images/assets/cross-icon.png"
+                : "images/assets/menu-icon.png"
+            }
+          />
         </Button>
       </FirstRow>
       <SecondRow showPanel={show}>
-        <ShareButton></ShareButton>
+        <ShareHamburger></ShareHamburger>
         {DataNavbar.map((item) => (
           <LinkContainer>
             <a href={item.href}>{item.title}</a>
