@@ -46,7 +46,7 @@ const ModalContainer = Styled.div`
 `;
 
 const Modal = Styled.div`
-  background-color: black;
+  background-color: ${props => props.theme.colors.black};
   margin: 15% auto;
   padding: 20px;
   border: 1px solid black;
