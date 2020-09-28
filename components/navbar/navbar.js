@@ -9,7 +9,7 @@ const NavContainer = Styled.div`
   font-family: 'Playfair Display', serif;
   overflow: hidden;
   width: 100%;
-  background-color: black;
+  background-color: ${props => props.theme.colors.black};
   display:grid;
   align-items:center;
   @media (min-width: 1200px){
@@ -34,7 +34,7 @@ const LogoContainer = Styled.div`
 `;
 
 const Title = Styled.div`
-  color: gold;
+  color: ${props => props.theme.colors.gold};
   font-size: 2rem;
   @media (max-width: 768px){
     font-size: 1.8rem;

@@ -45,17 +45,18 @@ const FirstRow = Styled.div`
 
 const Button = Styled.button`
   float: right;
-  background-color:black;
+  background: none;
   box-sizing: border-box;
   border: none;
     :focus{
     outline: none;
   }
+  padding-right: 1.5rem;
 `;
 
 const MenuIcon = Styled.img`
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
 
 `;
 
@@ -69,7 +70,7 @@ const SecondRow = Styled.div`
 `;
 
 const LinkContainer = Styled.div`
-    background-color:black;
+    background-color: ${props => props.theme.colors.black};
     padding:1rem;
     a{
         text-decoration: none;

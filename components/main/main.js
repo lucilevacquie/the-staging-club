@@ -14,7 +14,7 @@ const Container = Styled.div`
   width: 100%;
   background-color:rgb(234, 233, 233);
   overflow:hidden;
-  @media (max-width: 576px){
+  @media ${props => props.theme.sizes.mobile} {
     grid-template-columns : 100%;
   }
 `;

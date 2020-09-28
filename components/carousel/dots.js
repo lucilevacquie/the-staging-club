@@ -6,7 +6,7 @@ const Container = Styled.div`
   width:100%;
 `;
 
-const Dot = Styled.button`
+const Dot = Styled.div`
   height: 25px;
   width: 25px;
   background-color: ${(props) => (props.active ? "black" : "grey")};
@@ -24,14 +24,6 @@ const Dot = Styled.button`
   @media (max-width: 992px){
     height: 20px;
     width: 20px;
-  }
-  @media (max-width: 768px){
-    height: 15px;
-    width: 15px;
-  }
-  @media (max-width: 576px){
-    height: 5px;
-    width: 5px;
   }
 `;
 

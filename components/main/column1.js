@@ -6,12 +6,12 @@ const Container = Styled.div`
   color: white;
   font-size: 1rem;
   text-align: center;
-  background-color: black;
+  background-color: ${props => props.theme.colors.black};
   display:grid;
   grid-template-rows: 65% 35%;
   align-items: center;
   max-height: fit-content;
-  @media (max-width: 576px){
+  @media ${props => props.theme.sizes.mobile} {
     display:none;
   }
 `;

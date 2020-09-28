@@ -4,8 +4,9 @@ const Container = Styled.div`
     color:white;
     width: 100%;
     text-align: center;
-    background-color: black;
+    background-color: ${props => props.theme.colors.darkerBlack};
     font-family: 'Playfair Display', serif;
+    padding-top: 1rem;
 `;
 
 const Share = Styled.div``;
