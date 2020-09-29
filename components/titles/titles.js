@@ -1,6 +1,6 @@
 import Styled from "styled-components";
 
-const Container = Styled.div`
+const Container = Styled.h1`
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   text-align:center;

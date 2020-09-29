@@ -11,14 +11,18 @@ padding : 1rem 4rem;
     }
 `;
 
+const Text = Styled.p`
+  font-family: 'Raleway', sans-serif;
+`;
+
 const Contact = () => {
   return (
     <Container id="contact">
       <Titles>Contact us</Titles>
-      <p>
+      <Text>
         For a no obligation chat about your plans just get in touch by using any
         of the methods below!
-      </p>
+      </Text>
       <ContactLink />
     </Container>
   );

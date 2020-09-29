@@ -1,7 +1,7 @@
 import Styled from "styled-components";
 
 const Container = Styled.div`
-  font-family: 'Playfair Display', serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 1.2rem;
   justify-content: justify;
   flex:2;
@@ -19,7 +19,10 @@ const Container = Styled.div`
   }
 `;
 
-const Blabla = Styled.p``;
+const Blabla = Styled.p`
+  text-align: justify;
+  line-height: 1.5rem;
+`;
 
 const Text = (props) => {
   return (

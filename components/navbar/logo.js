@@ -8,7 +8,7 @@ width: 65%;
 `;
 
 const Logo = () => {
-  return <LogoImg src="images/assets/the-staging-club4.png" alt="Logo" />;
+  return <LogoImg src="images/assets/logowebsite.png" alt="Logo" />;
 };
 
 export default Logo;

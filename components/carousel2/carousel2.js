@@ -70,7 +70,9 @@ const Img = Styled.img`
     max-height: 482px;
 `;
 
-const Label = Styled.div``;
+const Label = Styled.div`
+  font-family: 'Raleway', sans-serif;
+`;
 
 const Carousel = () => {
   const [count, setCount] = useState(0);
