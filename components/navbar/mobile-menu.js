@@ -70,7 +70,7 @@ const SecondRow = Styled.div`
 `;
 
 const LinkContainer = Styled.div`
-    background-color: ${props => props.theme.colors.black};
+    background-color: ${(props) => props.theme.colors.black};
     padding:1rem;
     a{
         text-decoration: none;
@@ -101,7 +101,9 @@ const HamburgerMenu = () => {
         <ShareHamburger></ShareHamburger>
         {DataNavbar.map((item) => (
           <LinkContainer>
-            <a href={item.href}>{item.title}</a>
+            <a href={item.href} onClick={() => setShow(!show)}>
+              {item.title}
+            </a>
           </LinkContainer>
         ))}
       </SecondRow>
