@@ -1,5 +1,28 @@
 import Styled from "styled-components";
 
+const DataNavbar = [
+  {
+    href: "home",
+    title: "Home",
+  },
+  {
+    href: "aboutus",
+    title: "About us",
+  },
+  {
+    href: "services",
+    title: "Services",
+  },
+  {
+    href: "gallery",
+    title: "Gallery",
+  },
+  {
+    href: "contact",
+    title: "Contact",
+  },
+];
+
 const LinkContainer = Styled.div`
   color: white;
   text-align: center;
@@ -22,13 +45,22 @@ const LinkContainer = Styled.div`
 `;
 
 const LaptopMenu = () => {
+  const smoothScroll = (event, href) => {
+    event.preventDefault();
+    document.getElementById(href).scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <LinkContainer>
-      <a href="#home">Home</a>
-      <a href="#aboutus">About us</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+      {DataNavbar.map((item) => (
+        <a
+          href={"#" + item.href}
+          onClick={(event) => smoothScroll(event, item.href)}
+        >
+          {item.title}
+        </a>
+      ))}
     </LinkContainer>
   );
 };
