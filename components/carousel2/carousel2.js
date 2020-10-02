@@ -48,21 +48,42 @@ const SlideContainer = Styled.div`
     position:relative;
     overflow: hidden;
     display: flex;
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    width: 755px;
     height:510px;
     margin: auto;
+    @media (max-width: 992px){
+      width: 700px;
+    }
+    @media (max-width: 768px){
+      width: 500px;
+    }
+    @media (max-width: 576px){
+      width: 300px;
+    }
 `;
 
 const Slide = Styled.div`
     margin:0;
-    width: 100%;
     display: flex;
     align-items: center;
+    margin-left: ${(props) => -props.currentIndex * 100}%;
+    transition: 1s;
 `;
 
 const ImgSlide = Styled.div`
-    max-width: 755px;
-    display:${(props) => (props.active ? "block" : "none")};
+    width: 755px;
+    display: block;
+    @media (max-width: 992px){
+      width: 700px;
+    }
+    @media (max-width: 768px){
+      width: 500px;
+    }
+    @media (max-width: 576px){
+      width: 300px;
+    }
+
 `;
 
 const Img = Styled.img`
@@ -93,7 +114,7 @@ const Carousel = () => {
   return (
     <Container>
       <SlideContainer>
-        <Slide>
+        <Slide currentIndex={count}>
           <ArrowContainer next={next} prev={prev} />
           {DataCarousel.map((item, index) => (
             <ImgSlide key={index} active={index === count}>

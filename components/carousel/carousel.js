@@ -9,12 +9,12 @@ const DataCarousel = [
     label: "Office",
   },
   {
-    img: "images/assets/carousel2.jpeg",
-    label: "Bedroom",
-  },
-  {
     img: "images/assets/carousel3.jpeg",
     label: "Kitchen",
+  },
+  {
+    img: "images/assets/carousel2.jpeg",
+    label: "Bedroom",
   },
 ];
 
@@ -39,15 +39,19 @@ width:100%;
 
 const Slide = Styled.div`
   margin:0;
-  max-width: 100%;
-  max-height: 100%;
   list-style-type: none;
   text-align: center;
+  display: flex;
+  margin-left: ${(props) => -props.currentIndex * 100}%;
+  transition: 1s;
+  @media (min-width: 1700px){
+    margin-left: ${(props) => -props.currentIndex * 110.5}%;
+  }
 `;
 
 const ImgSlide = Styled.div`
   width:100vw;
-  display:${(props) => (props.active ? "block" : "none")};
+  display: block;
 `;
 
 const Img = Styled.img`
@@ -76,7 +80,7 @@ const Carousel = () => {
     <Container id="home">
       <SlideContainer>
         <ArrowContainer next={next} prev={prev} />
-        <Slide>
+        <Slide currentIndex={count}>
           {DataCarousel.map((item, index) => (
             <ImgSlide key={index} active={index === count}>
               <Img src={item.img} alt="" />
