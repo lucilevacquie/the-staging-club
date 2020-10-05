@@ -1,20 +1,25 @@
 import Styled from "styled-components";
 import { useState } from "react";
 import ArrowContainer from "./arrows";
+import MoreInfo from "./more-info";
+import Quote from "./quote";
 // import Dots from "./dots";
 
 const DataCarousel = [
   {
     img: "images/assets/carousel1.jpeg",
     label: "Office",
+    quote: "| Wonderful!",
   },
   {
     img: "images/assets/carousel3.jpeg",
     label: "Kitchen",
+    quote: "| Incredible!",
   },
   {
     img: "images/assets/carousel2.jpeg",
     label: "Bedroom",
+    quote: "| shit!",
   },
 ];
 
@@ -86,10 +91,12 @@ const Carousel = () => {
         <Slide currentIndex={count}>
           {DataCarousel.map((item, index) => (
             <ImgSlide key={index} active={index === count}>
-              <Img src={item.img} alt="" />
+              <Img src={item.img} alt=""></Img>
+              <Quote>{item.quote}</Quote>
             </ImgSlide>
           ))}
         </Slide>
+        <MoreInfo />
         {/* <Dots
           currentIndex={count}
           dataCarousel={DataCarousel}
