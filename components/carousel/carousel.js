@@ -1,7 +1,7 @@
 import Styled from "styled-components";
 import { useState } from "react";
 import ArrowContainer from "./arrows";
-import Dots from "./dots";
+// import Dots from "./dots";
 
 const DataCarousel = [
   {
@@ -42,10 +42,13 @@ const Slide = Styled.div`
   list-style-type: none;
   text-align: center;
   display: flex;
-  margin-left: ${(props) => -props.currentIndex * 100}%;
+  margin-left: ${(props) => -props.currentIndex * 110.5}%;
   transition: 1s;
-  @media (min-width: 1700px){
-    margin-left: ${(props) => -props.currentIndex * 110.5}%;
+  @media (max-width: 992px){
+    margin-left: ${(props) => -props.currentIndex * 113}%;
+  }
+  @media (max-width: 768px){
+    margin-left: ${(props) => -props.currentIndex * 100}%;
   }
 `;
 
@@ -87,11 +90,11 @@ const Carousel = () => {
             </ImgSlide>
           ))}
         </Slide>
-        <Dots
+        {/* <Dots
           currentIndex={count}
           dataCarousel={DataCarousel}
           onClickFunc={setCount}
-        />
+        /> */}
       </SlideContainer>
     </Container>
   );
