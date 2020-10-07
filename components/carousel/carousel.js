@@ -1,65 +1,60 @@
 import Styled from "styled-components";
-import { useState } from "react";
-import ArrowContainer from "./arrows";
+import { useState, useEffect, useRef } from "react";
 import MoreInfo from "./more-info";
 import Quote from "./quote";
-// import Dots from "./dots";
+import Next from "./nextarrow";
+import Prev from "./prevarrow";
 
 const DataCarousel = [
   {
     img: "images/assets/carousel1.jpeg",
     label: "Office",
-    quote: "| Wonderful!",
+    quote: "| This makes me excited to work from home!",
   },
   {
     img: "images/assets/carousel3.jpeg",
     label: "Kitchen",
-    quote: "| Incredible!",
+    quote: "| It looks like a show home!",
   },
   {
     img: "images/assets/carousel2.jpeg",
     label: "Bedroom",
-    quote: "| shit!",
+    quote:
+      "| This room is just classy boutique hotel vibes and I'm here for it!",
   },
 ];
+
+const transitionTime = 0.4;
 
 const Container = Styled.div`
   display : flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
   max-height:100%;
   @media (max-width: 576px){
     height:auto;
   }
+  position: relative;
 `;
 
 const SlideContainer = Styled.div`
-position:relative;
-overflow : hidden;
-display: flex;
-align-items:center;
 width:100%;
+/* height: 100%; */
+position: relative;
 `;
 
 const Slide = Styled.div`
-  margin:0;
-  list-style-type: none;
-  text-align: center;
-  display: flex;
-  margin-left: ${(props) => -props.currentIndex * 110.5}%;
-  transition: 1s;
-  @media (max-width: 992px){
-    margin-left: ${(props) => -props.currentIndex * 113}%;
-  }
-  @media (max-width: 768px){
-    margin-left: ${(props) => -props.currentIndex * 100}%;
-  }
+  height: 100%;
+  display: grid;
+  grid-template-columns : repeat(6, 100%);
+  position: relative;
 `;
 
 const ImgSlide = Styled.div`
   width:100vw;
-  display: block;
+  height: 100%;
 `;
 
 const Img = Styled.img`
@@ -67,42 +62,58 @@ const Img = Styled.img`
   height:100%;
 `;
 
+const ArrowContainer = Styled.div`
+  position: absolute;
+  width:100%;
+  display: flex;
+  align-items: center;
+`;
+
 const Carousel = () => {
-  const [count, setCount] = useState(0);
-  const prev = () => {
-    let newCount = count - 1;
-    if (newCount < 0) {
-      newCount = DataCarousel.length - 1;
+  const [rerender, setRerender] = useState();
+  const slideRef = useRef();
+  const onClickMove = (index) => {
+    console.log(index);
+    let position;
+    if (index === 1) {
+      position = "-200%";
+      DataCarousel.push(DataCarousel.shift());
+    } else {
+      position = "0%";
+      DataCarousel.unshift(DataCarousel.pop());
     }
-    setCount(newCount);
+    slideRef.current.style.transition = `${transitionTime}s`;
+    slideRef.current.style.transform = `translate(${position}, 0)`;
+
+    setTimeout(() => {
+      setRerender(!rerender);
+    }, transitionTime * 1000);
   };
-  const next = () => {
-    let newCount = count + 1;
-    if (newCount >= DataCarousel.length) {
-      newCount = 0;
+
+  useEffect(() => {
+    if (slideRef.current) {
+      slideRef.current.style.transition = "0s";
+      slideRef.current.style.transform = "translate(-100%, 0)";
     }
-    setCount(newCount);
-  };
+  }, [rerender]);
 
   return (
     <Container id="home">
       <SlideContainer>
-        <ArrowContainer next={next} prev={prev} />
-        <Slide currentIndex={count}>
-          {DataCarousel.map((item, index) => (
-            <ImgSlide key={index} active={index === count}>
+        <Slide ref={slideRef}>
+          {DataCarousel.map((item) => (
+            <ImgSlide key={item}>
               <Img src={item.img} alt=""></Img>
               <Quote>{item.quote}</Quote>
             </ImgSlide>
           ))}
         </Slide>
-        <MoreInfo />
-        {/* <Dots
-          currentIndex={count}
-          dataCarousel={DataCarousel}
-          onClickFunc={setCount}
-        /> */}
       </SlideContainer>
+      <ArrowContainer>
+        <Prev onClickFunc={onClickMove} />
+        <Next onClickFunc={onClickMove} />
+      </ArrowContainer>
+      <MoreInfo />
     </Container>
   );
 };

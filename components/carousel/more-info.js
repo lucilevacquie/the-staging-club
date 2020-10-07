@@ -1,7 +1,7 @@
 import Styled from "styled-components";
 
 const MoreContainer = Styled.div`
-  position: absolute;
+  position: sticky;
   display: flex;
   align-items: center;
   bottom: 0;

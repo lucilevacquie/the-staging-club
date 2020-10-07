@@ -28,12 +28,8 @@ const Image = Styled.img`
 
 const ArrowPrev = ({ onClickFunc }) => {
   return (
-    <ArrowButton>
-      <Image
-        src="images/assets/arrow-button.png"
-        alt="Previous"
-        onClick={onClickFunc}
-      ></Image>
+    <ArrowButton onClick={(e) => onClickFunc(-1)}>
+      <Image src="images/assets/arrow-button.png" alt="Previous"></Image>
     </ArrowButton>
   );
 };

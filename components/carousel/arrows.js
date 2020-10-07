@@ -4,8 +4,8 @@ import ArrowPrev from "./prevarrow";
 const ArrowContainer = ({ next, prev }) => {
   return (
     <>
-      <ArrowPrev onClickFunc={prev} />
-      <ArrowNext onClickFunc={next} />
+      <ArrowPrev onClickMove={prev} />
+      <ArrowNext onClickMove={next} />
     </>
   );
 };

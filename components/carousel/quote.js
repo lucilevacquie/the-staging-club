@@ -2,8 +2,8 @@ import Styled from "styled-components";
 
 const Container = Styled.div`
     background-color: ${(props) => props.theme.colors.black};
-    width: 35%;
-    bottom: 30%;
+    width: 38%;
+    bottom: 15%;
     left: 5%;
     position: sticky;
     opacity: 0.7;
