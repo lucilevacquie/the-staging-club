@@ -100,7 +100,7 @@ const HamburgerMenu = () => {
       <SecondRow showPanel={show}>
         <ShareHamburger></ShareHamburger>
         {DataNavbar.map((item) => (
-          <LinkContainer>
+          <LinkContainer key={item.href}>
             <a href={item.href} onClick={() => setShow(!show)}>
               {item.title}
             </a>

@@ -31,7 +31,7 @@ const Container = Styled.div`
       height: 500px;
     }
     @media (max-width: 992px){
-      height:450px;
+      height:470px;
     }
     @media (max-width: 768px){
       height:400px;
@@ -48,7 +48,6 @@ const SlideContainer = Styled.div`
     position:relative;
     overflow: hidden;
     display: flex;
-    /* max-width: 1200px; */
     width: 755px;
     height:510px;
     margin: auto;

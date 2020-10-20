@@ -55,6 +55,7 @@ const LaptopMenu = () => {
     <LinkContainer>
       {DataNavbar.map((item) => (
         <a
+          key={item.href}
           href={"#" + item.href}
           onClick={(event) => smoothScroll(event, item.href)}
         >

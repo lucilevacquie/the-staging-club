@@ -1,5 +1,5 @@
 import Styled from "styled-components";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import MoreInfo from "./more-info";
 import Quote from "./quote";
 import Next from "./nextarrow";
@@ -40,9 +40,7 @@ const Container = Styled.div`
 `;
 
 const SlideContainer = Styled.div`
-width:100%;
-/* height: 100%; */
-position: relative;
+  width:100%;
 `;
 
 const Slide = Styled.div`
@@ -50,16 +48,18 @@ const Slide = Styled.div`
   display: grid;
   grid-template-columns : repeat(6, 100%);
   position: relative;
+  transform: translate(-100%, 0);
 `;
 
 const ImgSlide = Styled.div`
-  width:100vw;
+  width: 100%;
   height: 100%;
 `;
 
 const Img = Styled.img`
   width: 100%;
   height:100%;
+  object-fit: cover;
 `;
 
 const ArrowContainer = Styled.div`
@@ -70,11 +70,17 @@ const ArrowContainer = Styled.div`
 `;
 
 const Carousel = () => {
-  const [rerender, setRerender] = useState();
   const slideRef = useRef();
+  const isMoving = useRef();
+  
   const onClickMove = (index) => {
-    console.log(index);
+    if (isMoving.current) {
+      return
+    } 
+    isMoving.current = true;
+    
     let position;
+
     if (index === 1) {
       position = "-200%";
       DataCarousel.push(DataCarousel.shift());
@@ -86,27 +92,37 @@ const Carousel = () => {
     slideRef.current.style.transform = `translate(${position}, 0)`;
 
     setTimeout(() => {
-      setRerender(!rerender);
-    }, transitionTime * 1000);
-  };
-
-  useEffect(() => {
-    if (slideRef.current) {
+      const imageElements = slideRef.current.children;
+      console.log(imageElements)
+      if (index === 1){
+        const clonedImage = imageElements[0].cloneNode(true)
+        slideRef.current.appendChild(clonedImage)
+        imageElements[0].remove()
+      } else {
+        const clonedImage = imageElements[imageElements.length - 1].cloneNode(true)
+        slideRef.current.prepend(clonedImage)
+        imageElements[imageElements.length - 1].remove()
+      }
       slideRef.current.style.transition = "0s";
       slideRef.current.style.transform = "translate(-100%, 0)";
-    }
-  }, [rerender]);
+
+      isMoving.current = false;
+
+    }, transitionTime * 1000);
+  }
 
   return (
     <Container id="home">
       <SlideContainer>
         <Slide ref={slideRef}>
-          {DataCarousel.map((item) => (
-            <ImgSlide key={item}>
-              <Img src={item.img} alt=""></Img>
-              <Quote>{item.quote}</Quote>
-            </ImgSlide>
-          ))}
+          {DataCarousel.map((item) => {
+            return (
+              <ImgSlide key={item.img}>
+                <Img src={item.img} alt="" />
+                <Quote>{item.quote}</Quote>
+              </ImgSlide>
+            )
+          })}
         </Slide>
       </SlideContainer>
       <ArrowContainer>

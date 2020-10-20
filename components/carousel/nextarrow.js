@@ -24,9 +24,9 @@ const Image = Styled.img`
   }
 `;
 
-const ArrowNext = ({ onClickFunc }) => {
+const ArrowNext = ({ onClickMove }) => {
   return (
-    <ArrowButton onClick={(e) => onClickFunc(1)}>
+    <ArrowButton onClick={(e) => onClickMove(1)}>
       <Image src="images/assets/arrow-button.png" alt="Next" />
     </ArrowButton>
   );
