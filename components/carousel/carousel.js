@@ -24,7 +24,7 @@ const DataCarousel = [
   },
 ];
 
-const transitionTime = 0.4;
+const transitionTime = 0.8;
 
 const Container = Styled.div`
   display : flex;
